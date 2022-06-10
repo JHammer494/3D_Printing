@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  printing-db:
+    image: postgres
+    restart: unless-stopped
+    container_name: printing_db
+    environment:
+     - DATABASE_HOST=127.0.0.1
+     - POSTGRES_USER=postgres
+     - POSTGRES_PASSWORD=postgres
+     - POSTGRES_PORT=5432
+     - POSTGRES_DB=printing_database
+    ports:
+     - '5432:5432'
+    healthcheck:
+        test: ["CMD-SHELL", "pg_isready -U postgres"]
+        interval: 5s
+        timeout: 5s
+        retries: 5
+    volumes:
+      - ./api/db/data:/var/lib/postgresql/data
+
+  printing-app:
+    build: ./
+    restart: unless-stopped
+    container_name: printing_app
+    depends_on:
+      printing_db:
+        condition: service_healthy
+    ports:
+      - '8910:8910'
+      - '8911:8911'
+      - '5555:5555'
+    environment:
+      - RWJS_DEV_API_URL=http://localhost
+    volumes:
+      - .:/app
+    command: yarn rw dev
