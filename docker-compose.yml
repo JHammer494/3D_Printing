@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  printing-db:
+  postgres_db:
     image: postgres
     restart: unless-stopped
     container_name: printing_db
@@ -26,7 +26,7 @@ services:
     restart: unless-stopped
     container_name: printing_app
     depends_on:
-      printing_db:
+      postgres_db:
         condition: service_healthy
     ports:
       - '8910:8910'

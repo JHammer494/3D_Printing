@@ -29,6 +29,6 @@ EXPOSE 8911
 
 EXPOSE 8910
 
-Expose 5555
+EXPOSE 5555
 
 CMD [ "yarn", "rw", "serve", "api", "--port", "8911", "--rootPath", "/api" ]
