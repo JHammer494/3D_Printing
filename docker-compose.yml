@@ -21,19 +21,19 @@ services:
     volumes:
       - ./api/db/data:/var/lib/postgresql/data
 
-  printing-app:
-    build: ./
-    restart: unless-stopped
-    container_name: printing_app
-    depends_on:
-      postgres_db:
-        condition: service_healthy
-    ports:
-      - '8910:8910'
-      - '8911:8911'
-      - '5555:5555'
-    environment:
-      - RWJS_DEV_API_URL=http://localhost
-    volumes:
-      - .:/app
-    command: yarn rw dev
+  # printing-app:
+  #   build: ./
+  #   restart: unless-stopped
+  #   container_name: printing_app
+  #   depends_on:
+  #     postgres_db:
+  #       condition: service_healthy
+  #   ports:
+  #     - '8910:8910'
+  #     - '8911:8911'
+  #     - '5555:5555'
+  #   environment:
+  #     - RWJS_DEV_API_URL=http://localhost
+  #   volumes:
+  #     - .:/app
+  #   command: yarn rw dev
