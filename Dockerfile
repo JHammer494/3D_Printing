@@ -1,6 +1,7 @@
 FROM positivly/prisma-binaries:latest as prisma
 FROM node:16.15.0-alpine as base
 
+
 WORKDIR /app
 
 COPY package.json package.json
@@ -25,6 +26,7 @@ RUN yarn rw dev api
 
 FROM node:16.15.0-alpine
 
+
 WORKDIR /app
 
 COPY api/package.json .
@@ -44,6 +46,8 @@ EXPOSE 8911
 EXPOSE 8910
 
 EXPOSE 5555
+
+RUN apk add --no-cache libc6-compat openssl openssl-dev
 
 ENV PRISMA_QUERY_ENGINE_BINARY=/prisma-engines/query-engine \
   PRISMA_MIGRATION_ENGINE_BINARY=/prisma-engines/migration-engine \
