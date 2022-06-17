@@ -12,36 +12,53 @@ generator client {
 // to create migrations for them and apply to your dev DB.
 // TODO: Please remove the following example:
 
-model Plate {
-  id      Int    @id @default(autoincrement())
-  printer String
-  size    Size[]
+model Product {
+  id                         Int                          @id @default(autoincrement())
+  title                      String
+  price                      Float
+  size                       Size                         @relation(fields: [size_id], references: [id])
+  size_id                    Int
+  material                   Material                     @relation(fields: [material_id], references: [id])
+  material_id                Int
+  time                       Int
+  Materials_machines_poducts Materials_machines_poducts[]
 }
 
-model Image {
-  id      Int       @id @default(autoincrement())
-  url     String
-  product Product[]
+model Machine {
+  id                         Int                          @id @default(autoincrement())
+  name                       String
+  model                      String
+  Materials_machines_poducts Materials_machines_poducts[]
+}
+
+model Material {
+  id                         Int                          @id @default(autoincrement())
+  color                      Color                        @relation(fields: [color_id], references: [id])
+  color_id                   Int
+  type                       Int
+  materials_machines_poducts Materials_machines_poducts[]
+  Product                    Product[]
 }
 
 model Size {
-  id          Int       @id @default(autoincrement())
-  description String
-  plate_id    Plate     @relation(fields: [plate_size], references: [id])
-  plate_size  Int
-  product     Product[]
+  id      Int       @id @default(autoincrement())
+  volumn  Float?
+  weight  Float?
+  Product Product[]
 }
 
-model Product {
+model Color {
+  id       Int        @id @default(autoincrement())
+  name     String
+  Material Material[]
+}
+
+model Materials_machines_poducts {
   id          Int      @id @default(autoincrement())
-  title       String   @unique
-  price       Int
-  size        Size     @relation(fields: [sizeID], references: [id])
-  sizeID      Int
-  print       DateTime
-  file_id     Int
-  image_id    Image    @relation(fields: [image], references: [id])
-  image       Int
-  description String
-  meta_terms  String
+  material    Material @relation(fields: [material_id], references: [id])
+  material_id Int
+  product     Product  @relation(fields: [product_id], references: [id])
+  product_id  Int
+  machine     Machine  @relation(fields: [machine_id], references: [id])
+  machine_id  Int
 }

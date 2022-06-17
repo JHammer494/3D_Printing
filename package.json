@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "rw-start": "docker compose up -d && yarn redwood dev"
+    "rw-start": "docker compose up -d && yarn redwood dev api && yarn redwood dev web"
   },
   "private": true,
   "workspaces": {
