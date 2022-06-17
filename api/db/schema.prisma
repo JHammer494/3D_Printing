@@ -13,31 +13,31 @@ generator client {
 // TODO: Please remove the following example:
 
 model Product {
-  id                         Int                          @id @default(autoincrement())
-  title                      String
-  price                      Float
-  size                       Size                         @relation(fields: [size_id], references: [id])
-  size_id                    Int
-  material                   Material                     @relation(fields: [material_id], references: [id])
-  material_id                Int
-  time                       Int
-  Materials_machines_poducts Materials_machines_poducts[]
+  id          Int      @id @default(autoincrement())
+  title       String
+  price       Float
+  size        Size     @relation(fields: [size_id], references: [id])
+  size_id     Int
+  material    Material @relation(fields: [material_id], references: [id])
+  material_id Int
+  time        Int
+  MMP         MMP[]
 }
 
 model Machine {
-  id                         Int                          @id @default(autoincrement())
-  name                       String
-  model                      String
-  Materials_machines_poducts Materials_machines_poducts[]
+  id    Int    @id @default(autoincrement())
+  name  String
+  model String
+  MMP   MMP[]
 }
 
 model Material {
-  id                         Int                          @id @default(autoincrement())
-  color                      Color                        @relation(fields: [color_id], references: [id])
-  color_id                   Int
-  type                       Int
-  materials_machines_poducts Materials_machines_poducts[]
-  Product                    Product[]
+  id       Int       @id @default(autoincrement())
+  color    Color     @relation(fields: [color_id], references: [id])
+  color_id Int
+  type     Int
+  MMP      MMP[]
+  Product  Product[]
 }
 
 model Size {
@@ -53,7 +53,7 @@ model Color {
   Material Material[]
 }
 
-model Materials_machines_poducts {
+model MMP {
   id          Int      @id @default(autoincrement())
   material    Material @relation(fields: [material_id], references: [id])
   material_id Int

@@ -46,13 +46,13 @@ CREATE TABLE "Color" (
 );
 
 -- CreateTable
-CREATE TABLE "Materials_machines_poducts" (
+CREATE TABLE "MMP" (
     "id" SERIAL NOT NULL,
     "material_id" INTEGER NOT NULL,
     "product_id" INTEGER NOT NULL,
     "machine_id" INTEGER NOT NULL,
 
-    CONSTRAINT "Materials_machines_poducts_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "MMP_pkey" PRIMARY KEY ("id")
 );
 
 -- AddForeignKey
@@ -65,10 +65,10 @@ ALTER TABLE "Product" ADD CONSTRAINT "Product_size_id_fkey" FOREIGN KEY ("size_i
 ALTER TABLE "Material" ADD CONSTRAINT "Material_color_id_fkey" FOREIGN KEY ("color_id") REFERENCES "Color"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Materials_machines_poducts" ADD CONSTRAINT "Materials_machines_poducts_product_id_fkey" FOREIGN KEY ("product_id") REFERENCES "Product"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "MMP" ADD CONSTRAINT "MMP_product_id_fkey" FOREIGN KEY ("product_id") REFERENCES "Product"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Materials_machines_poducts" ADD CONSTRAINT "Materials_machines_poducts_machine_id_fkey" FOREIGN KEY ("machine_id") REFERENCES "Machine"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "MMP" ADD CONSTRAINT "MMP_machine_id_fkey" FOREIGN KEY ("machine_id") REFERENCES "Machine"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "Materials_machines_poducts" ADD CONSTRAINT "Materials_machines_poducts_material_id_fkey" FOREIGN KEY ("material_id") REFERENCES "Material"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "MMP" ADD CONSTRAINT "MMP_material_id_fkey" FOREIGN KEY ("material_id") REFERENCES "Material"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
