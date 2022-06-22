@@ -28,35 +28,31 @@ describe('products', () => {
   scenario('creates a product', async (scenario) => {
     const result = await createProduct({
       input: {
-        title: 'String3256830',
-        price: 9757021,
-        sizeID: scenario.product.two.sizeID,
-        print: '2022-06-13T13:24:48Z',
-        file_id: 8555149,
-        image: scenario.product.two.image,
-        description: 'String',
-        meta_terms: 'String',
+        title: 'String',
+        price: 2219794.313734693,
+        size_id: scenario.product.two.size_id,
+        material_id: scenario.product.two.material_id,
+        time: 565141,
+        image_id: scenario.product.two.image_id,
       },
     })
 
-    expect(result.title).toEqual('String3256830')
-    expect(result.price).toEqual(9757021)
-    expect(result.sizeID).toEqual(scenario.product.two.sizeID)
-    expect(result.print).toEqual('2022-06-13T13:24:48Z')
-    expect(result.file_id).toEqual(8555149)
-    expect(result.image).toEqual(scenario.product.two.image)
-    expect(result.description).toEqual('String')
-    expect(result.meta_terms).toEqual('String')
+    expect(result.title).toEqual('String')
+    expect(result.price).toEqual(2219794.313734693)
+    expect(result.size_id).toEqual(scenario.product.two.size_id)
+    expect(result.material_id).toEqual(scenario.product.two.material_id)
+    expect(result.time).toEqual(565141)
+    expect(result.image_id).toEqual(scenario.product.two.image_id)
   })
 
   scenario('updates a product', async (scenario) => {
     const original = await product({ id: scenario.product.one.id })
     const result = await updateProduct({
       id: original.id,
-      input: { title: 'String67743562' },
+      input: { title: 'String2' },
     })
 
-    expect(result.title).toEqual('String67743562')
+    expect(result.title).toEqual('String2')
   })
 
   scenario('deletes a product', async (scenario) => {

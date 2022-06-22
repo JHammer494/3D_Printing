@@ -4,7 +4,7 @@ import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 import { Link, routes } from '@redwoodjs/router'
 
-import { QUERY } from 'src/components/MMP/MMPSCell'
+import { QUERY } from 'src/components/Mmp/MmpsCell'
 
 const DELETE_MMP_MUTATION = gql`
   mutation DeleteMmpMutation($id: Int!) {
@@ -103,7 +103,7 @@ const MmpsList = ({ mmps }) => {
                     Show
                   </Link>
                   <Link
-                    to={routes.editMMP({ id: mmp.id })}
+                    to={routes.editMmp({ id: mmp.id })}
                     title={'Edit mmp ' + mmp.id}
                     className="rw-button rw-button-small rw-button-blue"
                   >

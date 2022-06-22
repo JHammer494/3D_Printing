@@ -1,7 +1,7 @@
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 import { navigate, routes } from '@redwoodjs/router'
-import MmpForm from 'src/components/MMP/MMPForm'
+import MmpForm from 'src/components/Mmp/MmpForm'
 
 const CREATE_MMP_MUTATION = gql`
   mutation CreateMmpMutation($input: CreateMmpInput!) {

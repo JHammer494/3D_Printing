@@ -2,7 +2,7 @@ import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 import { navigate, routes } from '@redwoodjs/router'
 
-import MmpForm from 'src/components/MMP/MMPForm'
+import MmpForm from 'src/components/Mmp/MmpForm'
 
 export const QUERY = gql`
   query EditMmpById($id: Int!) {

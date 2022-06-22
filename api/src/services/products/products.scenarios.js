@@ -2,39 +2,29 @@ export const standard = defineScenario({
   product: {
     one: {
       data: {
-        title: 'String21949',
-        price: 2681550,
-        print: '2022-06-13T13:24:48Z',
-        file_id: 3831126,
-        description: 'String',
-        meta_terms: 'String',
-        size: {
-          create: {
-            description: 'String',
-            plate_id: { create: { printer: 'String' } },
-          },
+        title: 'String',
+        price: 9333322.719022892,
+        time: 8661578,
+        size: { create: {} },
+        material: {
+          create: { type: 4131745, color: { create: { name: 'String' } } },
         },
 
-        image_id: { create: { url: 'String' } },
+        image: { create: { url: 'String' } },
       },
     },
 
     two: {
       data: {
-        title: 'String8055859',
-        price: 6743556,
-        print: '2022-06-13T13:24:48Z',
-        file_id: 5246979,
-        description: 'String',
-        meta_terms: 'String',
-        size: {
-          create: {
-            description: 'String',
-            plate_id: { create: { printer: 'String' } },
-          },
+        title: 'String',
+        price: 7305631.000012318,
+        time: 2678245,
+        size: { create: {} },
+        material: {
+          create: { type: 8509458, color: { create: { name: 'String' } } },
         },
 
-        image_id: { create: { url: 'String' } },
+        image: { create: { url: 'String' } },
       },
     },
   },

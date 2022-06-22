@@ -1,4 +1,4 @@
-import MmpsCell from 'src/components/MMP/MMPSCell'
+import MmpsCell from 'src/components/Mmp/MmpsCell'
 
 const MmpsPage = () => {
   return <MmpsCell />

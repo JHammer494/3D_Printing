@@ -30,6 +30,6 @@ export const deleteMachine = ({ id }) => {
 }
 
 export const Machine = {
-  MMP: (_obj, { root }) =>
-    db.machine.findUnique({ where: { id: root.id } }).MMP(),
+  Mmp: (_obj, { root }) =>
+    db.machine.findUnique({ where: { id: root.id } }).Mmp(),
 }

@@ -30,8 +30,6 @@ export const deleteSize = ({ id }) => {
 }
 
 export const Size = {
-  plate_id: (_obj, { root }) =>
-    db.size.findUnique({ where: { id: root.id } }).plate_id(),
-  product: (_obj, { root }) =>
-    db.size.findUnique({ where: { id: root.id } }).product(),
+  Product: (_obj, { root }) =>
+    db.size.findUnique({ where: { id: root.id } }).Product(),
 }

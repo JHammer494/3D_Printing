@@ -1,6 +1,6 @@
 import { Link, routes } from '@redwoodjs/router'
 
-import Mmps from 'src/components/MMP/MMPS'
+import Mmps from 'src/components/Mmp/Mmps'
 
 export const QUERY = gql`
   query FindMmps {
@@ -19,7 +19,7 @@ export const Empty = () => {
   return (
     <div className="rw-text-center">
       {'No mmps yet. '}
-      <Link to={routes.newMMP()} className="rw-link">
+      <Link to={routes.newMmp()} className="rw-link">
         {'Create one?'}
       </Link>
     </div>

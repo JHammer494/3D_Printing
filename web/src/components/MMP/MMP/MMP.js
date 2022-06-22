@@ -93,7 +93,7 @@ const Mmp = ({ mmp }) => {
       </div>
       <nav className="rw-button-group">
         <Link
-          to={routes.editMMP({ id: mmp.id })}
+          to={routes.editMmp({ id: mmp.id })}
           className="rw-button rw-button-blue"
         >
           Edit

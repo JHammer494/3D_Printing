@@ -8,7 +8,9 @@ export const schema = gql`
     material: Material!
     material_id: Int!
     time: Int!
-    MMP: [MMP]!
+    Mmp: [Mmp]!
+    image: Image!
+    image_id: Int!
   }
 
   type Query {
@@ -22,6 +24,7 @@ export const schema = gql`
     size_id: Int!
     material_id: Int!
     time: Int!
+    image_id: Int!
   }
 
   input UpdateProductInput {
@@ -30,6 +33,7 @@ export const schema = gql`
     size_id: Int
     material_id: Int
     time: Int
+    image_id: Int
   }
 
   type Mutation {

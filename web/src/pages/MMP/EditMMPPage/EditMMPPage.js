@@ -1,4 +1,4 @@
-import EditMmpCell from 'src/components/MMP/EditMMPCell'
+import EditMmpCell from 'src/components/Mmp/EditMmpCell'
 
 const EditMmpPage = ({ id }) => {
   return <EditMmpCell id={id} />

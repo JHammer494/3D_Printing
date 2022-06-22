@@ -3,7 +3,7 @@ export const schema = gql`
     id: Int!
     name: String!
     model: String!
-    MMP: [MMP]!
+    Mmp: [Mmp]!
   }
 
   type Query {

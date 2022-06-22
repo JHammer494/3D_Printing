@@ -8,10 +8,6 @@ generator client {
   binaryTargets = ["native", "darwin", "debian-openssl-3.0.x", "linux-arm64-openssl-3.0.x"]
 }
 
-// Define your own datamodels here and run `yarn redwood prisma migrate dev`
-// to create migrations for them and apply to your dev DB.
-// TODO: Please remove the following example:
-
 model Product {
   id          Int      @id @default(autoincrement())
   title       String
@@ -21,14 +17,16 @@ model Product {
   material    Material @relation(fields: [material_id], references: [id])
   material_id Int
   time        Int
-  MMP         MMP[]
+  Mmp         Mmp[]
+  image       Image    @relation(fields: [image_id], references: [id])
+  image_id    Int
 }
 
 model Machine {
   id    Int    @id @default(autoincrement())
   name  String
   model String
-  MMP   MMP[]
+  Mmp   Mmp[]
 }
 
 model Material {
@@ -36,7 +34,7 @@ model Material {
   color    Color     @relation(fields: [color_id], references: [id])
   color_id Int
   type     Int
-  MMP      MMP[]
+  Mmp      Mmp[]
   Product  Product[]
 }
 
@@ -50,10 +48,11 @@ model Size {
 model Color {
   id       Int        @id @default(autoincrement())
   name     String
+  hex      String
   Material Material[]
 }
 
-model MMP {
+model Mmp {
   id          Int      @id @default(autoincrement())
   material    Material @relation(fields: [material_id], references: [id])
   material_id Int
@@ -61,4 +60,10 @@ model MMP {
   product_id  Int
   machine     Machine  @relation(fields: [machine_id], references: [id])
   machine_id  Int
+}
+
+model Image {
+  id      Int       @id @default(autoincrement())
+  url     String
+  Product Product[]
 }

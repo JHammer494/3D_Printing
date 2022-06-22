@@ -7,15 +7,62 @@ export default async () => {
     // Seeds automatically with `yarn rw prisma migrate dev` and `yarn rw prisma migrate reset`
     //
     // Update "const data = []" to match your data model and seeding needs
-    //
-    const data = [
-      // To try this example data with the UserExample model in schema.prisma,
-      // uncomment the lines below and run 'yarn rw prisma migrate dev'
-      //
-      // { name: 'alice', email: 'alice@example.com' },
-      // { name: 'mark', email: 'mark@example.com' },
-      // { name: 'jackie', email: 'jackie@example.com' },
-      // { name: 'bob', email: 'bob@example.com' },
+    // url https://htmlcolorcodes.com/color-names/
+    const colors = [
+      { name: 'IndianRed', hex: 'CD5C5C' },
+      { name: 'LightCoral', hex: 'F08080' },
+      {
+        name: 'Salmon',
+        hex: 'FA8072',
+      },
+      {
+        name: 'DarkSalmon',
+        hex: 'E9967A',
+      },
+      {
+        name: 'LightSalmon',
+        hex: 'FFA07A',
+      },
+      {
+        name: 'Crimson',
+        hex: 'DC143C',
+      },
+      {
+        name: 'Red',
+        hex: 'FF0000',
+      },
+      {
+        name: 'FireBrick',
+        hex: 'B22222',
+      },
+      {
+        name: 'DarkRed',
+        hex: '8B0000',
+      },
+      {
+        name: 'Pink',
+        hex: 'FFC0CB',
+      },
+      {
+        name: 'LightPink',
+        hex: 'FFB6C1',
+      },
+      {
+        name: 'HotPink',
+        hex: 'FF69B4',
+      },
+      {
+        name: 'DeepPink',
+        hex: 'FF1493',
+      },
+      {
+        name: 'MediumVioletRed',
+        hex: 'C71585',
+      },
+      {
+        name: 'PaleVioletRed',
+        hex: 'DB7093',
+      },
     ]
     console.log(
       "\nUsing the default './scripts/seed.{js,ts}' template\nEdit the file to add seed data\n"
@@ -27,8 +74,8 @@ export default async () => {
       //
       // Change to match your data model and seeding needs
       //
-      data.map(async (data) => {
-        const record = await db.userExample.create({ data })
+      colors.map(async (data) => {
+        const record = await db.color.create({ data })
         console.log(record)
       })
     )

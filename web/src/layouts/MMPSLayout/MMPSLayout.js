@@ -11,7 +11,7 @@ const MmpsLayout = ({ children }) => {
             Mmps
           </Link>
         </h1>
-        <Link to={routes.newMMP()} className="rw-button rw-button-green">
+        <Link to={routes.newMmp()} className="rw-button rw-button-green">
           <div className="rw-button-icon">+</div> New Mmp
         </Link>
       </header>

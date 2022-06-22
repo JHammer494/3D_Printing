@@ -3,17 +3,17 @@ export const standard = defineScenario({
     one: {
       data: {
         material: {
-          create: { type: 1753351, color: { create: { name: 'String' } } },
+          create: { type: 5531784, color: { create: { name: 'String' } } },
         },
 
         product: {
           create: {
             title: 'String',
-            price: 9143991.861799477,
-            time: 1928064,
+            price: 288302.4106240573,
+            time: 1818307,
             size: { create: {} },
             material: {
-              create: { type: 3321202, color: { create: { name: 'String' } } },
+              create: { type: 5332972, color: { create: { name: 'String' } } },
             },
           },
         },
@@ -25,17 +25,17 @@ export const standard = defineScenario({
     two: {
       data: {
         material: {
-          create: { type: 6688346, color: { create: { name: 'String' } } },
+          create: { type: 6079634, color: { create: { name: 'String' } } },
         },
 
         product: {
           create: {
             title: 'String',
-            price: 3209715.227857952,
-            time: 3152162,
+            price: 1405919.4775094541,
+            time: 4247114,
             size: { create: {} },
             material: {
-              create: { type: 849869, color: { create: { name: 'String' } } },
+              create: { type: 8500992, color: { create: { name: 'String' } } },
             },
           },
         },

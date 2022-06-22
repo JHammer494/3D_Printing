@@ -1,4 +1,4 @@
-import MmpCell from 'src/components/MMP/MMPCell'
+import MmpCell from 'src/components/Mmp/MmpCell'
 
 const MmpPage = ({ id }) => {
   return <MmpCell id={id} />

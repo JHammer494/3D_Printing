@@ -1,4 +1,4 @@
-import Mmp from 'src/components/MMP/MMP'
+import Mmp from 'src/components/Mmp/Mmp'
 
 export const QUERY = gql`
   query FindMmpById($id: Int!) {

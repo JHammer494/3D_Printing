@@ -27,21 +27,21 @@ describe('materials', () => {
 
   scenario('creates a material', async (scenario) => {
     const result = await createMaterial({
-      input: { color_id: scenario.material.two.color_id, type: 4392809 },
+      input: { color_id: scenario.material.two.color_id, type: 3209213 },
     })
 
     expect(result.color_id).toEqual(scenario.material.two.color_id)
-    expect(result.type).toEqual(4392809)
+    expect(result.type).toEqual(3209213)
   })
 
   scenario('updates a material', async (scenario) => {
     const original = await material({ id: scenario.material.one.id })
     const result = await updateMaterial({
       id: original.id,
-      input: { type: 2592508 },
+      input: { type: 7903636 },
     })
 
-    expect(result.type).toEqual(2592508)
+    expect(result.type).toEqual(7903636)
   })
 
   scenario('deletes a material', async (scenario) => {

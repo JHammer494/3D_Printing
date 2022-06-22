@@ -4,7 +4,7 @@ export const schema = gql`
     color: Color!
     color_id: Int!
     type: Int!
-    MMP: [MMP]!
+    Mmp: [Mmp]!
     Product: [Product]!
   }
 
