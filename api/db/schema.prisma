@@ -18,8 +18,8 @@ model Product {
   material_id Int
   time        Int
   Mmp         Mmp[]
-  image       Image    @relation(fields: [image_id], references: [id])
-  image_id    Int
+  image       Image?   @relation(fields: [image_id], references: [id])
+  image_id    Int?
 }
 
 model Machine {
@@ -33,14 +33,14 @@ model Material {
   id       Int       @id @default(autoincrement())
   color    Color     @relation(fields: [color_id], references: [id])
   color_id Int
-  type     Int
+  type     String
   Mmp      Mmp[]
   Product  Product[]
 }
 
 model Size {
   id      Int       @id @default(autoincrement())
-  volumn  Float?
+  volume  Float?
   weight  Float?
   Product Product[]
 }
