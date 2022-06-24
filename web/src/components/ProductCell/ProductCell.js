@@ -1,4 +1,4 @@
-import { Box, Card, Grid } from '@mui/material'
+import { Grid } from '@mui/material'
 import ProductCellCard from './ProductCellCard'
 
 export const QUERY = gql`
