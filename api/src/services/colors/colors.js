@@ -30,6 +30,6 @@ export const deleteColor = ({ id }) => {
 }
 
 export const Color = {
-  Material: (_obj, { root }) =>
-    db.color.findUnique({ where: { id: root.id } }).Material(),
+  MaterialColor: (_obj, { root }) =>
+    db.color.findUnique({ where: { id: root.id } }).MaterialColor(),
 }

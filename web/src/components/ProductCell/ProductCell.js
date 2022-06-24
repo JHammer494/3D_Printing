@@ -10,10 +10,12 @@ export const QUERY = gql`
         material {
           id
           type
-          color {
-            id
-            name
-            hex
+          MaterialColor {
+            color {
+              id
+              name
+              hex
+            }
           }
         }
       }
@@ -35,7 +37,7 @@ export const Failure = ({ error }) => (
 
 export const Success = ({ products }) => {
   const productListings = products.map((data) => {
-    return <ProductCellCard product={data} />
+    return <ProductCellCard product={data} key={data.id} />
   })
   return (
     <Grid container direction="row">

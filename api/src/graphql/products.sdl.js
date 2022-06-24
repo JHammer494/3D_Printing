@@ -5,12 +5,12 @@ export const schema = gql`
     price: Float!
     size: Size!
     size_id: Int!
-    material: Material!
-    material_id: Int!
     time: Int!
     Mmp: [Mmp]!
     image: Image
     image_id: Int
+    Material: Material
+    materialId: Int
   }
 
   type Query {
@@ -22,18 +22,18 @@ export const schema = gql`
     title: String!
     price: Float!
     size_id: Int!
-    material_id: Int!
     time: Int!
     image_id: Int
+    materialId: Int
   }
 
   input UpdateProductInput {
     title: String
     price: Float
     size_id: Int
-    material_id: Int
     time: Int
     image_id: Int
+    materialId: Int
   }
 
   type Mutation {

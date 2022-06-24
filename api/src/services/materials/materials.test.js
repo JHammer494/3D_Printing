@@ -25,12 +25,11 @@ describe('materials', () => {
     expect(result).toEqual(scenario.material.one)
   })
 
-  scenario('creates a material', async (scenario) => {
+  scenario('creates a material', async () => {
     const result = await createMaterial({
-      input: { color_id: scenario.material.two.color_id, type: 'String' },
+      input: { type: 'String' },
     })
 
-    expect(result.color_id).toEqual(scenario.material.two.color_id)
     expect(result.type).toEqual('String')
   })
 

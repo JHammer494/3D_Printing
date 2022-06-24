@@ -29,18 +29,16 @@ describe('products', () => {
     const result = await createProduct({
       input: {
         title: 'String',
-        price: 1718296.2956055992,
+        price: 3521708.318826229,
         size_id: scenario.product.two.size_id,
-        material_id: scenario.product.two.material_id,
-        time: 3481531,
+        time: 8420662,
       },
     })
 
     expect(result.title).toEqual('String')
-    expect(result.price).toEqual(1718296.2956055992)
+    expect(result.price).toEqual(3521708.318826229)
     expect(result.size_id).toEqual(scenario.product.two.size_id)
-    expect(result.material_id).toEqual(scenario.product.two.material_id)
-    expect(result.time).toEqual(3481531)
+    expect(result.time).toEqual(8420662)
   })
 
   scenario('updates a product', async (scenario) => {

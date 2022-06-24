@@ -32,10 +32,10 @@ export const deleteProduct = ({ id }) => {
 export const Product = {
   size: (_obj, { root }) =>
     db.product.findUnique({ where: { id: root.id } }).size(),
-  material: (_obj, { root }) =>
-    db.product.findUnique({ where: { id: root.id } }).material(),
   Mmp: (_obj, { root }) =>
     db.product.findUnique({ where: { id: root.id } }).Mmp(),
   image: (_obj, { root }) =>
     db.product.findUnique({ where: { id: root.id } }).image(),
+  Material: (_obj, { root }) =>
+    db.product.findUnique({ where: { id: root.id } }).Material(),
 }

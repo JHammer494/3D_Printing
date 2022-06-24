@@ -30,10 +30,10 @@ export const deleteMaterial = ({ id }) => {
 }
 
 export const Material = {
-  color: (_obj, { root }) =>
-    db.material.findUnique({ where: { id: root.id } }).color(),
   Mmp: (_obj, { root }) =>
     db.material.findUnique({ where: { id: root.id } }).Mmp(),
   Product: (_obj, { root }) =>
     db.material.findUnique({ where: { id: root.id } }).Product(),
+  MaterialColor: (_obj, { root }) =>
+    db.material.findUnique({ where: { id: root.id } }).MaterialColor(),
 }

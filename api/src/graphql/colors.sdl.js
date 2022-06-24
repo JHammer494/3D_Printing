@@ -3,7 +3,7 @@ export const schema = gql`
     id: Int!
     name: String!
     hex: String!
-    Material: [Material]!
+    MaterialColor: [MaterialColor]!
   }
 
   type Query {
