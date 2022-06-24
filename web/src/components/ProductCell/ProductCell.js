@@ -1,13 +1,20 @@
+import { Box, Card, Grid } from '@mui/material'
+import ProductCellCard from './ProductCellCard'
+
 export const QUERY = gql`
   query FindProductQuery {
     products: products {
       id
       image_id
-      material {
-        type
-        color {
+      Mmp {
+        material {
           id
-          name
+          type
+          color {
+            id
+            name
+            hex
+          }
         }
       }
       price
@@ -28,14 +35,11 @@ export const Failure = ({ error }) => (
 
 export const Success = ({ products }) => {
   const productListings = products.map((data) => {
-    return (
-      <div key={data.id}>
-        <h1>{data.title}</h1>
-        <ul>
-          <li>{data.price}</li>
-        </ul>
-      </div>
-    )
+    return <ProductCellCard product={data} />
   })
-  return <>{productListings}</>
+  return (
+    <Grid container direction="row">
+      {productListings}
+    </Grid>
+  )
 }

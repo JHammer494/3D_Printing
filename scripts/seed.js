@@ -59,6 +59,19 @@ export default async () => {
     const mmp = [
       { material_id: 1, product_id: 1, machine_id: 1 },
       { material_id: 2, product_id: 1, machine_id: 1 },
+      { material_id: 1, product_id: 2, machine_id: 1 },
+      { material_id: 2, product_id: 2, machine_id: 1 },
+      { material_id: 1, product_id: 3, machine_id: 1 },
+      { material_id: 1, product_id: 4, machine_id: 3 },
+      { material_id: 2, product_id: 3, machine_id: 2 },
+      { material_id: 2, product_id: 4, machine_id: 3 },
+      { material_id: 3, product_id: 1, machine_id: 2 },
+      { material_id: 4, product_id: 1, machine_id: 1 },
+      { material_id: 3, product_id: 2, machine_id: 2 },
+      { material_id: 4, product_id: 2, machine_id: 3 },
+      { material_id: 3, product_id: 3, machine_id: 1 },
+      { material_id: 4, product_id: 3, machine_id: 3 },
+      { material_id: 3, product_id: 4, machine_id: 2 },
     ]
 
     console.log(
