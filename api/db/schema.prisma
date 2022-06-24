@@ -9,17 +9,17 @@ generator client {
 }
 
 model Product {
-  id          Int      @id @default(autoincrement())
-  title       String
-  price       Float
-  size        Size     @relation(fields: [size_id], references: [id])
-  size_id     Int
-  material    Material @relation(fields: [material_id], references: [id])
-  material_id Int
-  time        Int
-  Mmp         Mmp[]
-  image       Image?   @relation(fields: [image_id], references: [id])
-  image_id    Int?
+  id         Int       @id @default(autoincrement())
+  title      String
+  price      Float
+  size       Size      @relation(fields: [size_id], references: [id])
+  size_id    Int
+  time       Int
+  Mmp        Mmp[]
+  image      Image?    @relation(fields: [image_id], references: [id])
+  image_id   Int?
+  Material   Material? @relation(fields: [materialId], references: [id])
+  materialId Int?
 }
 
 model Machine {
@@ -30,12 +30,11 @@ model Machine {
 }
 
 model Material {
-  id       Int       @id @default(autoincrement())
-  color    Color     @relation(fields: [color_id], references: [id])
-  color_id Int
-  type     String
-  Mmp      Mmp[]
-  Product  Product[]
+  id            Int             @id @default(autoincrement())
+  type          String
+  Mmp           Mmp[]
+  Product       Product[]
+  MaterialColor MaterialColor[]
 }
 
 model Size {
@@ -46,10 +45,10 @@ model Size {
 }
 
 model Color {
-  id       Int        @id @default(autoincrement())
-  name     String
-  hex      String
-  Material Material[]
+  id            Int             @id @default(autoincrement())
+  name          String
+  hex           String
+  MaterialColor MaterialColor[]
 }
 
 model Mmp {
@@ -60,6 +59,14 @@ model Mmp {
   product_id  Int
   machine     Machine  @relation(fields: [machine_id], references: [id])
   machine_id  Int
+}
+
+model MaterialColor {
+  id          Int      @id @default(autoincrement())
+  material    Material @relation(fields: [material_id], references: [id])
+  material_id Int
+  color       Color    @relation(fields: [color_id], references: [id])
+  color_id    Int
 }
 
 model Image {

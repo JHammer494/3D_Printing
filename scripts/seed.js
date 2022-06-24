@@ -40,10 +40,10 @@ export default async () => {
       { weight: 120 },
     ]
     const material = [
-      { color_id: 1, type: 'PLA' },
-      { color_id: 2, type: 'PETg' },
-      { color_id: 3, type: 'ECO Resin' },
-      { color_id: 4, type: 'Flexible Resin' },
+      { type: 'PLA' },
+      { type: 'PETg' },
+      { type: 'ECO Resin' },
+      { type: 'Flexible Resin' },
     ]
     const machine = [
       { name: 'BB', model: 'Ender 3' },
@@ -51,10 +51,10 @@ export default async () => {
       { name: 'Cait', model: 'Photon S' },
     ]
     const product = [
-      { title: 'Stompa', price: 156, size_id: 1, material_id: 1, time: 60 },
-      { title: 'Gun boi', price: 800, size_id: 2, material_id: 1, time: 60 },
-      { title: 'Fish Mecha', price: 60, size_id: 3, material_id: 1, time: 60 },
-      { title: 'Wurm', price: 50, size_id: 4, material_id: 1, time: 60 },
+      { title: 'Stompa', price: 156, size_id: 1, time: 60 },
+      { title: 'Gun boi', price: 800, size_id: 2, time: 60 },
+      { title: 'Fish Mecha', price: 60, size_id: 3, time: 60 },
+      { title: 'Wurm', price: 50, size_id: 4, time: 60 },
     ]
     const mmp = [
       { material_id: 1, product_id: 1, machine_id: 1 },
@@ -73,6 +73,20 @@ export default async () => {
       { material_id: 4, product_id: 3, machine_id: 3 },
       { material_id: 3, product_id: 4, machine_id: 2 },
     ]
+    const MaterialColors = [
+      { material_id: 1, color_id: 2 },
+      { material_id: 2, color_id: 2 },
+      { material_id: 3, color_id: 2 },
+      { material_id: 4, color_id: 2 },
+      { material_id: 1, color_id: 3 },
+      { material_id: 2, color_id: 3 },
+      { material_id: 3, color_id: 3 },
+      { material_id: 4, color_id: 3 },
+      { material_id: 1, color_id: 5 },
+      { material_id: 2, color_id: 6 },
+      { material_id: 3, color_id: 7 },
+      { material_id: 4, color_id: 8 },
+    ]
 
     console.log(
       "\nUsing the default './scripts/seed.{js,ts}' template\nEdit the file to add seed data\n"
@@ -87,6 +101,8 @@ export default async () => {
     await db.Size.createMany({ data: size })
 
     await db.Material.createMany({ data: material })
+
+    await db.MaterialColor.createMany({ data: MaterialColors })
 
     await db.Product.createMany({ data: product })
 

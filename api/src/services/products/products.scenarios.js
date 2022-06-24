@@ -3,30 +3,18 @@ export const standard = defineScenario({
     one: {
       data: {
         title: 'String',
-        price: 9940551.908844342,
-        time: 9766377,
+        price: 4199659.2663284885,
+        time: 7862910,
         size: { create: {} },
-        material: {
-          create: {
-            type: 'String',
-            color: { create: { name: 'String', hex: 'String' } },
-          },
-        },
       },
     },
 
     two: {
       data: {
         title: 'String',
-        price: 8905957.719920328,
-        time: 7316721,
+        price: 9822326.110241111,
+        time: 6724750,
         size: { create: {} },
-        material: {
-          create: {
-            type: 'String',
-            color: { create: { name: 'String', hex: 'String' } },
-          },
-        },
       },
     },
   },

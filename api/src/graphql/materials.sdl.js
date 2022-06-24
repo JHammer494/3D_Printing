@@ -1,11 +1,10 @@
 export const schema = gql`
   type Material {
     id: Int!
-    color: Color!
-    color_id: Int!
     type: String!
     Mmp: [Mmp]!
     Product: [Product]!
+    MaterialColor: [MaterialColor]!
   }
 
   type Query {
@@ -14,12 +13,10 @@ export const schema = gql`
   }
 
   input CreateMaterialInput {
-    color_id: Int!
     type: String!
   }
 
   input UpdateMaterialInput {
-    color_id: Int
     type: String
   }
 
