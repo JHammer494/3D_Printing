@@ -29,8 +29,10 @@
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@mui/icons-material": "^5.8.4",
-    "@mui/material": "^5.8.4",
+    "@mui/material": "^5.8.5",
+    "@mui/styled-engine-sc": "^5.8.0",
     "@prisma/client": "latest",
-    "prisma": "latest"
+    "prisma": "latest",
+    "styled-components": "^5.3.5"
   }
 }
