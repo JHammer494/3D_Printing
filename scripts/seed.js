@@ -1,4 +1,5 @@
 import { db } from 'api/src/lib/db'
+import { Colors } from './Seeds/Colors'
 
 export default async () => {
   try {
@@ -8,23 +9,6 @@ export default async () => {
     //
     // Update "const data = []" to match your data model and seeding needs
     // url https://htmlcolorcodes.com/color-names/
-    const colors = [
-      { name: 'IndianRed', hex: 'CD5C5C' },
-      { name: 'LightCoral', hex: 'F08080' },
-      { name: 'Salmon', hex: 'FA8072' },
-      { name: 'DarkSalmon', hex: 'E9967A' },
-      { name: 'LightSalmon', hex: 'FFA07A' },
-      { name: 'Crimson', hex: 'DC143C' },
-      { name: 'Red', hex: 'FF0000' },
-      { name: 'FireBrick', hex: 'B22222' },
-      { name: 'DarkRed', hex: '8B0000' },
-      { name: 'Pink', hex: 'FFC0CB' },
-      { name: 'LightPink', hex: 'FFB6C1' },
-      { name: 'HotPink', hex: 'FF69B4' },
-      { name: 'DeepPink', hex: 'FF1493' },
-      { name: 'MediumVioletRed', hex: 'C71585' },
-      { name: 'PaleVioletRed', hex: 'DB7093' },
-    ]
     const image = [
       {
         url: 'https://cdn.thomasnet.com/insights-images/embedded-images/235f0f09-547e-4883-98f7-22f216f9ad58/eed988b6-6b67-4fdf-9e0f-71db2cef0bb5/FullHD/best-3d-printer-miniatures-2020.jpg',
@@ -94,7 +78,7 @@ export default async () => {
 
     await db.Machine.createMany({ data: machine })
 
-    await db.Color.createMany({ data: colors })
+    await db.Color.createMany({ data: Colors })
 
     await db.Image.createMany({ data: image })
 
