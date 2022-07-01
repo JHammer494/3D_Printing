@@ -31,7 +31,6 @@ const Colors = [
   { name: 'PaleGoldenrod', hex: 'EEE8AA' },
   { name: 'Khaki', hex: 'F0E68C' },
   { name: 'DarkKhaki', hex: '8DB76B' },
-  { name: '', hex: '' },
 ]
 
 export default Colors

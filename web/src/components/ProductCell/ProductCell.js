@@ -1,4 +1,5 @@
 import { Grid } from '@mui/material'
+
 import ProductCellCard from './ProductCellCard'
 
 export const QUERY = gql`
@@ -36,11 +37,12 @@ export const Failure = ({ error }) => (
 )
 
 export const Success = ({ products }) => {
+  // console.log('in success')
   const productListings = products.map((data) => {
     return <ProductCellCard product={data} key={data.id} />
   })
   return (
-    <Grid container direction="row">
+    <Grid container direction="row" sx={{ justifyContent: 'center' }}>
       {productListings}
     </Grid>
   )

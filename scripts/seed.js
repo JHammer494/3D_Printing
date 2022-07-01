@@ -1,5 +1,6 @@
 import { db } from 'api/src/lib/db'
-import { Colors } from './Seeds/Colors'
+
+import Colors from './Seeds/Colors'
 
 export default async () => {
   try {
@@ -78,7 +79,7 @@ export default async () => {
 
     await db.Machine.createMany({ data: machine })
 
-    await db.Color.createMany({ data: Colors })
+    await db.Color.createMany({ data: Colors, skipDuplicates: true })
 
     await db.Image.createMany({ data: image })
 
