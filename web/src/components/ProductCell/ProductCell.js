@@ -11,13 +11,6 @@ export const QUERY = gql`
         material {
           id
           type
-          MaterialColor {
-            color {
-              id
-              name
-              hex
-            }
-          }
         }
       }
       price

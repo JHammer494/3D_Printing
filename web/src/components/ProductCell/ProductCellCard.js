@@ -6,39 +6,24 @@ import { Box } from '@mui/system'
 const ProductCellCard = ({ product }) => {
   const [material, setMaterial] = useState(product.Mmp[0].material)
   const [value, setValue] = useState('')
-  const [color, setColor] = useState(
-    product.Mmp[0].material.MaterialColor[0].color
-  )
 
   // console.log(material)
   // console.log(material.MaterialColor)
-  useEffect(() => {
-    setColor(material?.MaterialColor[0]?.color)
-  }, [material])
 
   const MaterialChange = (event) => {
     setValue(event.target.value)
     setMaterial(event.target.value)
   }
-  function MakeMenuItem({ materialcolors, materialOptions }) {
-    if (materialcolors) {
-      return materialcolors.map(({ color }) => {
-        return (
-          <MenuItem value={color.name} key={color.hex}>
-            {color.name}
-          </MenuItem>
-        )
-      })
-    } else if (materialOptions) {
-      return materialOptions.map(({ material }) => {
-        return (
-          <MenuItem value={material.type} key={material.id}>
-            {material.type}
-          </MenuItem>
-        )
-      })
-    }
+  function MakeMenuItem({ materialOptions }) {
+    return materialOptions.map(({ material }) => {
+      return (
+        <MenuItem value={material.type} key={material.id}>
+          {material.type}
+        </MenuItem>
+      )
+    })
   }
+
   function RenderList() {
     return (
       <Box sx={{ maxWidth: 140, justifyContent: 'flex-end' }}>
@@ -55,18 +40,6 @@ const ProductCellCard = ({ product }) => {
           >
             <MenuItem>Nothing</MenuItem>
             <MakeMenuItem materialOptions={product.Mmp} />
-          </TextField>
-          <TextField
-            select
-            placeholder="Select Color"
-            id="color"
-            defaultValue=""
-            value=""
-            fullWidth
-            label="Select Color"
-          >
-            <MenuItem>Nothing</MenuItem>
-            <MakeMenuItem materialcolors={material?.MaterialColor} />
           </TextField>
         </FormControl>
       </Box>
