@@ -37,7 +37,7 @@ export const Failure = ({ error }) => (
 )
 
 export const Success = ({ products }) => {
-  // console.log('in success')
+  console.log('in success')
   const productListings = products.map((data) => {
     return <ProductCellCard product={data} key={data.id} />
   })
