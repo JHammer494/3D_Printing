@@ -7,6 +7,7 @@ export const schema = gql`
     product_id: Int!
     machine: Machine!
     machine_id: Int!
+    filteredMaterial: Material!
   }
 
   type Query {

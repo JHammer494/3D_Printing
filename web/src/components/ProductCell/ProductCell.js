@@ -30,12 +30,17 @@ export const Failure = ({ error }) => (
 )
 
 export const Success = ({ products }) => {
-  console.log('in success')
+  // console.log('in success')
   const productListings = products.map((data) => {
     return <ProductCellCard product={data} key={data.id} />
   })
   return (
-    <Grid container direction="row" sx={{ justifyContent: 'center' }}>
+    <Grid
+      container
+      direction="row"
+      spacing={2}
+      sx={{ justifyContent: 'center', p: 2 }}
+    >
       {productListings}
     </Grid>
   )

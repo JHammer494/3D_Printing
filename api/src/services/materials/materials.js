@@ -1,7 +1,9 @@
 import { db } from 'src/lib/db'
 
 export const materials = () => {
-  return db.material.findMany()
+  return db.material.findMany({
+    distinct: ['id'],
+  })
 }
 
 export const material = ({ id }) => {

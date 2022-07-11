@@ -5,7 +5,25 @@ import { Box } from '@mui/system'
 
 const ProductCellCard = ({ product }) => {
   const [material, setMaterial] = useState(product.Mmp[0].material)
-  const [value, setValue] = useState('')
+  const [value, setValue] = useState([])
+
+  useEffect(() => {
+    let unique = []
+    product.Mmp.forEach((mat) => {
+      console.log(mat.material)
+      let there = false
+      for (let x of unique) {
+        if (x.id === mat.material.id) {
+          there = true
+        }
+      }
+      if (!there) {
+        unique.push(mat.material)
+      }
+    })
+    console.log(unique)
+    setValue(unique)
+  }, [])
 
   // console.log(material)
   // console.log(material.MaterialColor)
@@ -15,13 +33,15 @@ const ProductCellCard = ({ product }) => {
     setMaterial(event.target.value)
   }
   function MakeMenuItem({ materialOptions }) {
-    return materialOptions.map(({ material }) => {
-      return (
-        <MenuItem value={material.type} key={material.id}>
-          {material.type}
+    const options = []
+    for (let x of materialOptions) {
+      options.push(
+        <MenuItem value={x.type} key={x.id}>
+          {x.type}
         </MenuItem>
       )
-    })
+    }
+    return options
   }
 
   function RenderList() {
@@ -33,13 +53,12 @@ const ProductCellCard = ({ product }) => {
             placeholder="Select Material"
             id="Material"
             defaultValue=""
-            value={value}
             fullWidth
             label="Available Materials"
             onChange={MaterialChange}
           >
             <MenuItem>Nothing</MenuItem>
-            <MakeMenuItem materialOptions={product.Mmp} />
+            {value ? <MakeMenuItem materialOptions={value} /> : <>Loading...</>}
           </TextField>
         </FormControl>
       </Box>
